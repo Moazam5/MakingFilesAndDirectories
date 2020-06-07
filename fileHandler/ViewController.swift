@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ARKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         let dataPath2 = docDir.appendingPathComponent("\(dirName)+\(b)" ).appendingPathComponent("file.txt")
 
         do{
-            try text.write(to: dataPath2, atomically: true, encoding: .utf8)
+            try text.write(to: dataPath, atomically: true, encoding: .utf8)
         }catch{
             print("Faced an error \(error)")
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let dataPath2 = docDir.appendingPathComponent("\(dirName)+\(b)" ).appendingPathComponent("file.txt")
 
       
-        if let fileUpdater = try? FileHandle(forUpdating: dataPath2){
+        if let fileUpdater = try? FileHandle(forUpdating: dataPath){
             fileUpdater.seekToEndOfFile()
             fileUpdater.write(moreText.data(using: .utf8)!)
             fileUpdater.closeFile()
@@ -84,6 +84,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    
     @IBAction func makeDirButton(_ sender: UIButton)
     {
         write()

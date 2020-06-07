@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         
     }
     
-    var a = 1
+    var a = 15
     
     func updateText(){
         
@@ -106,11 +106,3 @@ class ViewController: UIViewController {
     }
 }
 
-/*
- From initial vc, get the id
- From setParams VC get the date time info just before segue
- All of these will be stored in app delegate
- Directory has to be created during segue so it exists when called from thirdVC
- 
- then just access these from
- */
